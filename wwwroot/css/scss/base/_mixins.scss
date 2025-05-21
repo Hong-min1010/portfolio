@@ -1,0 +1,68 @@
+@import "variables";
+
+@mixin font($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin flexMC() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flexAC() {
+	display: flex;
+	align-items: center;
+}
+
+@mixin flexAC_b() {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+@mixin center-align() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin s-mobile {
+    @media(min-width: #{$s-mobile}) {
+        @content;
+    }
+}
+
+@mixin m-mobile {
+    @media(min-width: #{$m-mobile}) {
+        @content
+    }
+}
+
+@mixin s-tablet {
+    @media(min-width: #{$s-tablet}) {
+        @content
+    }
+}
+
+@mixin m-tablet {
+    @media(min-width: #{$m-tablet}) {
+        @content
+    }
+}
+
+@mixin s-pc {
+    @media(min-width: #{$s-pc}) {
+        @content
+    }
+}
+
+@mixin m-pc {
+    @media(min-width: #{$m-pc}) {
+        @content
+    }
+}
+

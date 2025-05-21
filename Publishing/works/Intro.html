@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/wwwroot/css/style.min.css" />
+    <title>Intro</title>
+    <script src="/wwwroot/js/common.js"></script>
+    <script>
+    $(function () {
+    $("[data-include]").each(function () {
+        var file = "/Publishing/_includes/" + $(this).data("include") + ".html";
+        $(this).load(file);
+    });
+});
+</script>
+</head>
+<body>
+    <header data-include="header"></header>
+    <div class="cloud"></div>
+</body>
+</html>
