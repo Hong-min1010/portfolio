@@ -1,0 +1,11 @@
+@import "variables";
+
+@mixin example () {
+    border: 1px solid red;
+    color: $blue;
+};
+
+@mixin wihe($width, $height){
+    width: $width;
+    height: $height;
+}
