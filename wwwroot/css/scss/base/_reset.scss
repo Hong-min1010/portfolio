@@ -1,0 +1,215 @@
+@import "variables";
+@import "mixins";
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+html,
+body {
+	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	padding: 0 !important;
+	//가로스크롤 방지
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	&:horizontal {
+		height: 10px;
+	}
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb {
+	background-color: #6d6d6d;
+	outline: 1px solid #6d6d6d;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+a {
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	text-decoration: none;
+	border: 0;
+	background: transparent;
+	color: inherit;
+	text-decoration: inherit;
+	&:visited,
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+		color: inherit;
+		outline: none !important;
+		box-shadow: none !important;
+	}
+}
+
+button {
+	color: inherit;
+	font-weight: inherit;
+	background: none;
+	border: none;
+	text-align: center;
+	&:focus {
+		outline: none;
+	}
+}
+
+input {
+	outline: none;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+textarea {
+	resize: none;
+	outline: none;
+	font-family: none;
+}
+
+li {
+	list-style-type: none;
+	list-style: none;
+}
+
+main {
+	display: block;
+}
+
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// 페이지 로딩
+.pageLoaging-bg {
+	@include flexMC;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, 0.7);
+	overflow: hidden;
+	z-index: 9000;
+	.spinner {
+		width: 4rem;
+		height: 4rem;
+		border: 0.5rem solid $lightGray;
+		border-bottom-color: $white;
+		border-radius: 50%;
+		animation: spinner 800ms linear infinite;
+	}
+}

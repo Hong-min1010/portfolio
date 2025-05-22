@@ -44,6 +44,11 @@ $clayCloudShadow: inset 22px 17px 17px 0px rgba(255,255,255,0.7),
   8px 8px 32px 0px rgba(140,180,220,0.22),
   inset 14px 14px 30px 0px rgba(120,160,200,0.15);
 
-$cloud-shadow: 0 16px 32px 8px rgba(100, 170, 220, 0.32);
 $lightGray: #E6E6E6;
 $darkGray: #A9A9A9;
+
+$sky-bg: linear-gradient(180deg, #cbe7ff 0%, #eaf5ff 100%);
+$portfolio-btn-shadow: 0 6px 18px 0 rgba(180,180,180,0.22);
+$click-btn-bg: linear-gradient(180deg, #b0b0b0, #e0e0e0);
+$click-btn-shadow: 0 2px 8px 0 rgba(120,120,120,0.12);
+$dotted: 3px dotted #7aaaff;
