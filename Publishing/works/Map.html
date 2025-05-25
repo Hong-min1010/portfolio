@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map</title>
+  <link rel="stylesheet" href="/wwwroot/css/style.min.css" />
+  <script src="/wwwroot/js/common.js"></script>
+  <script src="/wwwroot/js/Map.js"></script>
+  <script>
+    (function () {
+        $("[data-include]").each(function () {
+            var file = "/Publishing/_includes/" + $(this).data("include") + ".html";
+            $(this).load(file);
+        });
+    });
+  </script>
+</head>
+<body>
+  <div id="map">
+    <header data-include="header"></header>
+    <div class="container">
+      <div class="roadmap-bg">
+        <!-- 곡선 길 이미지 -->
+        <img src="/images/Way.png" alt="곡선" class="curve-bg" />
+
+        <!-- 구름 이미지 (위치 조정) -->
+        <img src="/images/FlowCloud.png" class="cloud cloud1" alt="구름" />
+        <img src="/images/FlowCloud.png" class="cloud cloud2" alt="구름" />
+        <img src="/images/FlowCloud.png" class="cloud cloud3" alt="구름" />
+        <img src="/images/FlowCloud.png" class="cloud cloud4" alt="구름" />
+        <img src="/images/FlowCloud.png" class="cloud cloud5" alt="구름" />
+        <img src="/images/FlowCloud.png" class="cloud cloud6" alt="구름" />
+
+        <!-- 노드(마커+초록원+카드) -->
+        <div class="roadmap-node" style="bottom: 90px; left: -40px;">
+            <div class="green-circle">
+              <img src="/images/Nav-mark.png" class="mark" alt="마커" />
+              <div class="browser-card"></div>
+          </div>
+        </div>
+        <div class="roadmap-node" style="top: 160px; left: 275px;">
+            <div class="green-circle">
+                <img src="/images/Nav-mark.png" class="mark" alt="마커" /> <!-- *수정* -->
+                <div class="browser-card"></div>
+          </div>
+        </div>
+        <div class="roadmap-node" style="top: 280px; right: -45px;">
+            <div class="green-circle">
+              <img src="/images/Nav-mark.png" class="mark" alt="마커" /> <!-- *수정* -->
+              <div class="browser-card"></div>
+          </div>
+        </div>
+        <div class="roadmap-node" style="bottom: 90px; right: 540px;">
+            <div class="green-circle">
+              <img src="/images/Nav-mark.png" class="mark" alt="마커" /> <!-- *수정* -->
+              <div class="browser-card"></div>
+          </div>
+        </div>
+        <div class="roadmap-node" style="top: 230px; right: 300px;">
+            <div class="green-circle">
+              <img src="/images/Nav-mark.png" class="mark" alt="마커" /> <!-- *수정* -->
+              <div class="browser-card"></div>
+          </div>
+        </div>
+        <div class="roadmap-node" style="top: 650px; right: -50px;">
+            <div class="green-circle">
+              <img src="/images/Nav-mark.png" class="mark" alt="마커" /> <!-- *수정* -->
+              <div class="browser-card"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
