@@ -25,8 +25,16 @@
 
 @mixin flexAC_b() {
 	display: flex;
+    flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+}
+
+@mixin flexCC_s() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 @mixin center-align() {
@@ -36,39 +44,38 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin s-mobile {
-    @media(min-width: #{$s-mobile}) {
-        @content;
-    }
+//360px
+@mixin mobile_B {
+	@media (min-width: #{$mobile}) {
+		@content;
+	}
 }
 
-@mixin m-mobile {
-    @media(min-width: #{$m-mobile}) {
-        @content
-    }
+// 768px
+@mixin tablet_S {
+	@media (min-width: #{$s-tablet}) {
+		@content;
+	}
 }
 
-@mixin s-tablet {
-    @media(min-width: #{$s-tablet}) {
-        @content
-    }
+// 1024px
+@mixin tablet_B {
+	@media (min-width: #{$m-tablet}) {
+		@content;
+	}
 }
 
-@mixin m-tablet {
-    @media(min-width: #{$m-tablet}) {
-        @content
-    }
+// min: 1280px max: 
+@mixin desktop_S {
+	@media (min-width: #{$s-pc}) {
+		@content;
+	}
 }
 
-@mixin s-pc {
-    @media(min-width: #{$s-pc}) {
-        @content
-    }
-}
-
-@mixin m-pc {
-    @media(min-width: #{$m-pc}) {
-        @content
-    }
+// 1440px
+@mixin desktop_B {
+	@media (min-width: #{$m-pc}) {
+		@content;
+	}
 }
 

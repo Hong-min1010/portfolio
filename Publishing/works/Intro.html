@@ -7,38 +7,40 @@
     <link rel="stylesheet" href="/wwwroot/css/style.min.css" />
     <title>Intro</title>
     <script src="/wwwroot/js/common.js"></script>
+    <script src="/wwwroot/js/Intro.js"></script>
     <script>
-    $(function () {
-    $("[data-include]").each(function () {
-        var file = "/Publishing/_includes/" + $(this).data("include") + ".html";
-        $(this).load(file);
-    });
-});
-</script>
+        (function () {
+            $("[data-include]").each(function () {
+                var file = "/Publishing/_includes/" + $(this).data("include") + ".html";
+                $(this).load(file);
+            });
+        });
+    </script>
 </head>
 <body>
-    <header data-include="header"></header>
-    <div class="intro-bg">
-    <div class="portfolio-round-wrap">
-        <div class="round-container">
-            <!-- viewBox="(X축 시작점(좌) , Y축 시작점(상) , 가로폭, 세로 높이이)" -->
-             <svg class="round" viewBox="-10 -10 120 70" preserveAspectRatio="none">
-            <!-- 좌측, 곡선제어(-값이 클수록 더 볼록해짐), 우측 -->
-                <path d="M10,60 A50,50 0 0 1 110,60" fill="none" stroke="#7aaaff" stroke-width="4" stroke-dasharray="6,6"/>
-            </svg>
-            <img src="/images/black-plane.png" alt="plane" class="plane" />
+    <div id="intro">
+        <header data-include="header"></header>
+        <div class="intro-bg">
+            <div class="portfolio-round-wrap">
+                <div class="round-container">
+                    <!-- viewBox="(X축 시작점(좌) , Y축 시작점(상) , 가로폭, 세로 높이이)" -->
+                    <svg class="round" viewBox="-10 -10 120 70" preserveAspectRatio="none">
+                    <!-- 좌측, 곡선제어(-값이 클수록 더 볼록해짐), 우측 -->
+                        <path id="arcPath" d="M10,60 A50,50 0 0 1 110,60" fill="none" stroke="#7aaaff" stroke-width="4" stroke-dasharray="6,6"/>
+                        <image id="plane" href="/images/black-plane.png" width="32" height="32"/>                    
+                    </svg>
+                </div>
+                <div class="portfolio-btn">Portfolio</div>
+                <button class="click-btn">Click !</button>
+            </div> 
+            <div class="clouds">
+                <img src="/images/clouds/cloud-b(l) 1.png" alt="구름1" class="cloud-img cloud-img1"></img>
+                <img src="/images/clouds/cloud-t(l) 1.png" alt="구름2" class="cloud-img cloud-img2"></img>
+                <img src="/images/clouds/cloud-center.png" alt="구름3" class="cloud-img cloud-img3"></img>
+                <img src="/images/clouds/cloud-b(r).png" alt="구름4" class="cloud-img cloud-img4"></img>
+                <img src="/images/clouds/cloud-t(r).png" alt="구름5" class="cloud-img cloud-img5"></img>
+            </div>
         </div>
-        <div class="portfolio-btn">Portfolio</div>
-        <button class="click-btn">Click !</button>
-    </div>
-    <div class="clouds">
-        <img src="/images/clouds/cloud-b(1).png" alt="구름1" class="cloud-img cloud-img1"></img>
-        <img src="/images/clouds/cloud-t(1).png" alt="구름2" class="cloud-img cloud-img2"></img>
-        <img src="/images/clouds/cloud-center.png" alt="구름3" class="cloud-img cloud-img3"></img>
-        <img src="/images/clouds/cloud-b(2).png" alt="구름4" class="cloud-img cloud-img4"></img>
-        <img src="/images/clouds/cloud-t(2).png" alt="구름5" class="cloud-img cloud-img5"></img>
-        </div>
-  
     </div>
 </body>
 </html>

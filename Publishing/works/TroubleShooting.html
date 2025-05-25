@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/wwwroot/css/style.min.css" />
+    <title>TroubleShooting</title>
+    <script src="/wwwroot/js/common.js"></script>
+    <script>
+    $(function () {
+    $("[data-include]").each(function () {
+        var file = "/Publishing/_includes/" + $(this).data("include") + ".html";
+        $(this).load(file);
+    });
+});
+</script>
+</head>
+<body>
+<div id="troubleShooting">
+    <header data-include="header"></header>
+    <div class="top">
+        <div class="troubleShootings">
+            <div class="main">
+                <div class="descriptionBox">
+                    <img class="check" src="/images/Check.png" alt="CheckImg" /> <!-- 수정됨++ -->
+                    <div class="descTextBox">
+                        TroubleShooting 설명
+                    </div>
+                </div>
+                <!-- 하단 컨텐츠 박스 -->
+                <div class="contents"> <!-- 수contentRow정됨++ -->
+                    <div class="failBox"> <!-- 수정됨++ -->
+                        <img class="failImg" src="/images/Fail.png" alt="fail" />
+                        <div class="imgBox"></div> <!-- 수정됨++ -->
+                    </div>
+                    <div class="arrowBox"> <!-- 수정됨++ -->
+                        <img class="arrowImg" src="/images/Arrow_rigth.png" alt="Arrow_right" />
+                    </div>
+                    <div class="successBox"> <!-- 수정됨++ -->
+                        <img class="successImg" src="/images/Success.png" alt="success" />
+                        <div class="imgBox"></div> <!-- 수정됨++ -->
+                    </div>
+                </div>
+            </div>
+            <!-- 두 번째 카드도 동일하게 반복 -->
+            <div class="main">
+                <div class="descriptionBox">
+                    <img class="check" src="/images/Check.png" alt="CheckImg" />
+                    <div class="descTextBox">
+                        TroubleShooting 설명
+                    </div>
+                </div>
+                <div class="contents">
+                    <div class="failBox">
+                        <img class="failImg" src="/images/Fail.png" alt="fail" />
+                        <div class="imgBox"></div>
+                    </div>
+                    <div class="arrowBox">
+                        <img class="arrowImg" src="/images/Arrow_rigth.png" alt="Arrow_right" />
+                    </div>
+                    <div class="successBox">
+                        <img class="successImg" src="/images/Success.png" alt="success" />
+                        <div class="imgBox"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
