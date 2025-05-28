@@ -1,127 +1,398 @@
+// #map {
+//     height: 100vh;
+//     box-sizing: border-box;
+//     padding-top: 48px;
+//     @include flexMC();
+//     overflow: hidden;
+
+//     .container {
+//         height: calc(100vh - 48px);
+//         @include mobile_B() {width: 100%; padding: 10px;}
+//         @include tablet_S() {max-width: 700px; width: 100%;}
+//         @include tablet_B() {max-width: 960px; width: 100%}
+//         @include desktop_S() {max-width: 1080px; width: 100%;}
+//         @include desktop_B() {max-width: 1440px; width: 100%;}
+
+//         border: none;
+//         display: flex;
+//         flex-direction: column;
+
+//         .roadmap-bg {
+//             position: relative;
+//             height: calc(100vh - 48px);
+//         }
+
+//         .curve-bg {
+//             position: absolute;
+//             left: 50%;
+//             top: 50%;
+//             width: 95vw;
+//             max-width: 1200px;
+//             height: auto;
+//             transform: translate(-50%, -50%);
+//             z-index: 1;
+//             pointer-events: none;
+//             user-select: none;
+//         }
+
+//         .cloud-wrapper {
+//             position: absolute;
+//             width: 100vw;
+//             height: 100vh;
+//             overflow: hidden;
+//             z-index: 2;
+
+//             .cloud-container {
+//                 border: 1px solid #000;
+//                 position: absolute;
+//                 width: 200vw;  // 원본 + 클론의 총 너비
+//                 // height: 100%;
+//                 display: flex;
+//                 flex-wrap: nowrap;
+//             }
+
+//             .cloud {
+//                 width: 350px;
+//                 flex-shrink: 0;
+//                 position: relative;
+//                 opacity: 0.8;
+//                 z-index: 2;
+//                 pointer-events: none;
+//                 user-select: none;
+
+//                 &.cloud1 { top: 80px; }
+//                 &.cloud2 { bottom: 10px; }
+//                 &.cloud3 { top: 300px; }
+//                 &.cloud4 { top: 20px; }
+//                 &.cloud5 { top: 360px; }
+//                 &.cloud6 { bottom: 20px; }
+//             }
+
+//             &.first {
+//                 .cloud {
+//                     border: 1px solid #000;
+//                     animation: floatCloudsFirst 30s linear infinite;
+//                 }
+//             }
+
+//             &.last {
+//                 .cloud {
+//                     border: 1px solid red;
+//                     animation: floatCloudsLast 30s linear infinite;
+//                     animation-delay: 15s;
+//                     opacity: 0;
+//                 }
+//             }
+//         }
+
+//         @keyframes floatCloudsFirst {
+//             // 0% {
+//             //     transform: translateX(-100vw);
+//             // }
+//             // 100% {
+//             //     transform: translateX(120vw);
+//             // }
+//             0%{
+//                 left: -100vw;
+//             }
+//             100%{
+//                 left: 100vw;
+//             }
+//         }
+
+//         @keyframes floatCloudsLast {
+//             0%{
+//                 left: -100vw;
+//                 opacity: 1;
+//             }
+//             100%{
+//                 left: 100vw;
+//                 opacity: 1;
+//             }
+//         }
+
+//         .roadmap-node {
+//             position: absolute;
+//             z-index: 10;
+//             display: flex;
+//             flex-direction: row;
+//             align-items: center;
+//             width: 340px;
+//             justify-content: center;
+
+//             .mark {
+//                 width: 52px;
+//                 height: 52px;
+//                 margin-right: 8px;
+//                 flex-shrink: 0;
+//                 z-index: 2;
+//             }
+//             .green-circle {
+//                 width: 140px;
+//                 height: 140px;
+//                 background: #b6ffb9;
+//                 border-radius: 50%;
+//                 box-shadow: 0 4px 16px 0 rgba(140,200,140,0.15);
+//                 position: relative;
+//                 flex-shrink: 0;
+//                 z-index: 1;
+//             }
+//              .browser-card {
+//                 position: absolute;
+//                 left: 100px;
+//                 top: -90px;
+//                 width: 260px;
+//                 height: 140px;
+//                 background: #fff;
+//                 border-radius: 24px;
+//                 box-shadow: 0 8px 32px 0 rgba(120,120,120,0.16);
+//                 border: 2px solid #e0e0e0;
+//                 display: flex;
+//                 align-items: flex-start;
+//                 justify-content: flex-start;
+//                 z-index: 4;
+//                 opacity: 0;
+//                 visibility: hidden;
+//                 pointer-events: none;
+//                 transition: opacity 0.2s;
+//                 &::before {
+//                     content: "";
+//                     display: block;
+//                     width: 100%;
+//                     height: 24px;
+//                     background: $button;
+//                     border-radius: 10px 10px 0px 0px;
+//                     position: absolute;
+//                     top: 0; left: 0;
+//                     z-index: 5;
+//                 }
+//                 &::after {
+//                     content: "";
+//                     position: absolute;
+//                     top: 8px; left: 24px;
+//                     width: 44px; height: 12px;
+//                     background: radial-gradient(circle at 8px 6px, #ff5a5a 6px, transparent 7px),
+//                                 radial-gradient(circle at 22px 6px, #ffd15a 6px, transparent 7px),
+//                                 radial-gradient(circle at 36px 6px, #7ad97a 6px, transparent 7px);
+//                     z-index: 6;
+//                 }
+//                 }
+
+//                 &:hover .browser-card {
+//                 opacity: 1;
+//                 visibility: visible;
+//                 pointer-events: auto;
+//                 }
+//             }
+//     }
+// }
+
 #map {
-    height: 100vh;
+    max-height: calc(100vh - 48px);
     box-sizing: border-box;
     padding-top: 48px;
+    // overflow: hidden;
+    position: relative;
     @include flexMC();
-    overflow: hidden;
 
-    .container {
-        height: calc(100vh - 48px);
-        @include mobile_B() {width: 100%; padding: 10px;}
-        @include tablet_S() {max-width: 700px; width: 100%;}
-        @include tablet_B() {max-width: 960px; width: 100%}
-        @include desktop_S() {max-width: 1080px; width: 100%;}
-        @include desktop_B() {max-width: 1440px; width: 100%;}
+    // .g-container {
+    //     overflow: hidden;
+    //     height: calc(100vh - 48px);
+    //     width: 100vw;
+    //     // height: 100vh;
+    //     border: 5px solid red;
+    //     @include flexMC();
 
-        border: none;
-        display: flex;
-        flex-direction: column;
 
-        .roadmap-bg {
-            position: relative;
+      
+
+        .container {
             height: calc(100vh - 48px);
-        }
+            @include mobile_B() {
+                width: 100%; 
+                // padding: 10px;
+            }
+            @include tablet_S() {max-width: 700px; width: 100%;}
+            @include tablet_B() {max-width: 960px; width: 100%}
+            @include desktop_S() {max-width: 1080px; width: 100%;}
+            @include desktop_B() {max-width: 1440px; width: 100%;}
 
-        .curve-bg {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 95vw;
-            max-width: 1200px;
-            height: auto;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            pointer-events: none;
-            user-select: none;
-        }
-
-        .cloud {
-            position: absolute;
-            opacity: 0.8;
-            z-index: 2;
-            pointer-events: none;
-            user-select: none;
-            &.cloud1 { width: 350px; top: 80px; left: -150px; }
-            &.cloud2 { width: 350px; bottom: 10px; left: 250px; }
-            &.cloud3 { width: 350px; top: 300px; left: 500px; }
-            &.cloud4 { width: 350px; top: 20px; right: 80px; }
-            &.cloud5 { width: 350px; top: 360px; right: -10px; }
-            &.cloud6 { width: 350px; bottom: 20px; right: -190px; }
-        }
-
-        .roadmap-node {
-            position: absolute;
-            z-index: 10;
+            border: none;
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 340px;
-            justify-content: center;
+            flex-direction: column;
 
-            .mark {
-                width: 52px;
-                height: 52px;
-                margin-right: 8px;
-                flex-shrink: 0;
-                z-index: 2;
-            }
-            .green-circle {
-                width: 140px;
-                height: 140px;
-                background: #b6ffb9;
-                border-radius: 50%;
-                box-shadow: 0 4px 16px 0 rgba(140,200,140,0.15);
-                position: relative;
-                flex-shrink: 0;
-                z-index: 1;
-            }
-             .browser-card {
+
+              .cloud-wrapper {
                 position: absolute;
-                left: 100px;
-                top: -90px;
-                width: 260px;
-                height: 140px;
-                background: #fff;
-                border-radius: 24px;
-                box-shadow: 0 8px 32px 0 rgba(120,120,120,0.16);
-                border: 2px solid #e0e0e0;
-                display: flex;
-                align-items: flex-start;
-                justify-content: flex-start;
-                z-index: 4;
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-                transition: opacity 0.2s;
-                &::before {
-                    content: "";
-                    display: block;
-                    width: 100%;
-                    height: 24px;
-                    background: $button;
-                    border-radius: 10px 10px 0px 0px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100vw;
+                height: calc(100vh - 48px);
+                overflow: hidden;
+                z-index: 2;
+                // padding: 0 !important;
+
+                .cloud-container {
+                    border: 1px solid #000;
                     position: absolute;
-                    top: 0; left: 0;
-                    z-index: 5;
-                }
-                &::after {
-                    content: "";
-                    position: absolute;
-                    top: 8px; left: 24px;
-                    width: 44px; height: 12px;
-                    background: radial-gradient(circle at 8px 6px, #ff5a5a 6px, transparent 7px),
-                                radial-gradient(circle at 22px 6px, #ffd15a 6px, transparent 7px),
-                                radial-gradient(circle at 36px 6px, #7ad97a 6px, transparent 7px);
-                    z-index: 6;
-                }
+                    width: 200vw;  // 원본 + 클론의 총 너비
+                    // height: 100%;
+                    display: flex;
+                    flex-wrap: nowrap;
                 }
 
-                &:hover .browser-card {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
+                .cloud {
+                    width: 350px;
+                    flex-shrink: 0;
+                    position: relative;
+                    opacity: 0.8;
+                    z-index: 2;
+                    pointer-events: none;
+                    user-select: none;
+
+                    &.cloud1 { top: 190px; }
+                    &.cloud2 { top: 270px; }
+                    &.cloud3 { top: 620px; }
+                    &.cloud4 { top: 260px; }
+                    &.cloud5 { top: 660px; }
+                    &.cloud6 { bottom: 20px; }
+                }
+
+                &.first {
+                    .cloud {
+                        border: 1px solid #000;
+                        animation: floatCloudsFirst 30s linear infinite;
+                    }
+                }
+
+                &.last {
+                    .cloud {
+                        border: 1px solid red;
+                        animation: floatCloudsLast 30s linear infinite;
+                        animation-delay: 15s;
+                        opacity: 0;
+                    }
                 }
             }
-    }
-}
 
+            @keyframes floatCloudsFirst {
+                // 0% {
+                //     transform: translateX(-100vw);
+                // }
+                // 100% {
+                //     transform: translateX(120vw);
+                // }
+                0%{
+                    left: -100vw;
+                }
+                100%{
+                    left: 100vw;
+                }
+            }
+
+            @keyframes floatCloudsLast {
+                0%{
+                    left: -100vw;
+                    opacity: 1;
+                }
+                100%{
+                    left: 100vw;
+                    opacity: 1;
+                }
+            }
+
+
+            .roadmap-bg {
+                position: relative;
+                height: calc(100vh - 48px);
+            }
+
+            .curve-bg {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 95vw;
+                max-width: 1200px;
+                height: auto;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                pointer-events: none;
+                user-select: none;
+            }
+
+            .roadmap-node {
+                position: absolute;
+                z-index: 10;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 340px;
+                justify-content: center;
+
+                .mark {
+                    width: 52px;
+                    height: 52px;
+                    margin-right: 8px;
+                    flex-shrink: 0;
+                    z-index: 2;
+                }
+                .green-circle {
+                    width: 140px;
+                    height: 140px;
+                    background: #b6ffb9;
+                    border-radius: 50%;
+                    box-shadow: 0 4px 16px 0 rgba(140,200,140,0.15);
+                    position: relative;
+                    flex-shrink: 0;
+                    z-index: 1;
+                }
+                .browser-card {
+                    position: absolute;
+                    left: 100px;
+                    top: -90px;
+                    width: 260px;
+                    height: 140px;
+                    background: #fff;
+                    border-radius: 24px;
+                    box-shadow: 0 8px 32px 0 rgba(120,120,120,0.16);
+                    border: 2px solid #e0e0e0;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    z-index: 4;
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                    transition: opacity 0.2s;
+                    &::before {
+                        content: "";
+                        display: block;
+                        width: 100%;
+                        height: 24px;
+                        background: $button;
+                        border-radius: 10px 10px 0px 0px;
+                        position: absolute;
+                        top: 0; left: 0;
+                        z-index: 5;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 8px; left: 24px;
+                        width: 44px; height: 12px;
+                        background: radial-gradient(circle at 8px 6px, #ff5a5a 6px, transparent 7px),
+                                    radial-gradient(circle at 22px 6px, #ffd15a 6px, transparent 7px),
+                                    radial-gradient(circle at 36px 6px, #7ad97a 6px, transparent 7px);
+                        z-index: 6;
+                    }
+                    }
+
+                    &:hover .browser-card {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: auto;
+                    }
+                }
+        }
+    // }
+}
